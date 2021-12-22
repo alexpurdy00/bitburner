@@ -43,3 +43,7 @@ async function importFiles(ns) {
   }
   return filesImported;
 }
+
+export function getFolder() {
+  return config.folder;
+}
