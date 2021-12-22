@@ -48,26 +48,26 @@ if (serverExists("pserv-24")) {
     var threads = ((2 ^ ((Math.log2(ram)) - 3)) * 3);
     for (var i = 0; i < 25; ++i) {
         var serv = "pserv-" + i;
-        killall(serv);
-        scp("basic.script", serv);
-        exec("basic.script", serv, threads);
+        ns.killall(serv);
+        ns.scp("basic.script", serv);
+        ns.exec("basic.script", serv, threads);
     }
 }
 
 for (var i = 0; i < port0Ram4.length; ++i) {
     var serv = port0Ram4[i];
-    killall(serv);
-    scp("basic.script", serv);
-    nuke(serv);
-    exec("basic.script", serv, 1);
+    ns.killall(serv);
+    ns.scp("basic.script", serv);
+    ns.nuke(serv);
+    ns.exec("basic.script", serv, 1);
 }
 
 for (var i = 0; i < port0Ram16.length; ++i) {
     var serv = port0Ram16[i];
-    killall(serv);
-    scp("basic.script", serv);
-    nuke(serv);
-    exec("basic.script", serv, 6);
+    ns.killall(serv);
+    ns.scp("basic.script", serv);
+    ns.nuke(serv);
+    ns.exec("basic.script", serv, 6);
 }
 
 while (!fileExists("BruteSSH.exe")) {
@@ -76,21 +76,21 @@ while (!fileExists("BruteSSH.exe")) {
 
 for (var i = 0; i < port1Ram8.length; ++i) {
     var serv = port1Ram8[i];
-    killall(serv);
-    scp("basic.script", serv);
-    brutessh(serv);
-    nuke(serv);
-    //installBackdoor(serv);
-    exec("basic.script", serv, 3);
+    ns.killall(serv);
+    ns.scp("basic.script", serv);
+    ns.brutessh(serv);
+    ns.nuke(serv);
+    //ns.installBackdoor(serv);
+    ns.exec("basic.script", serv, 3);
 }
 
 for (var i = 0; i < port1Ram32.length; ++i) {
     var serv = port1Ram32[i];
-    killall(serv);
-    scp("basic.script", serv);
-    brutessh(serv);
-    nuke(serv);
-    exec("basic.script", serv, 12);
+    ns.killall(serv);
+    ns.scp("basic.script", serv);
+    ns.brutessh(serv);
+    ns.nuke(serv);
+    ns.exec("basic.script", serv, 12);
 }
 
 while (!fileExists("FTPCrack.exe")) {
@@ -99,30 +99,30 @@ while (!fileExists("FTPCrack.exe")) {
 
 for (var i = 0; i < port2Ram0.length; ++i) {
     var serv = port2Ram0[i];
-    killall(serv);
-    brutessh(serv);
-    ftpcrack(serv);
-    nuke(serv);
+    ns.killall(serv);
+    ns.brutessh(serv);
+    ns.ftpcrack(serv);
+    ns.nuke(serv);
 }
 
 for (var i = 0; i < port2Ram8.length; ++i) {
     var serv = port2Ram8[i];
     scp("basic.script", serv)
-    killall(serv);
-    brutessh(serv);
-    ftpcrack(serv);
-    nuke(serv);
-    exec("basic.script", serv, 3);
+    ns.killall(serv);
+    ns.brutessh(serv);
+    ns.ftpcrack(serv);
+    ns.nuke(serv);
+    ns.exec("basic.script", serv, 3);
 }
 
 for (var i = 0; i < port2Ram32.length; ++i) {
     var serv = port2Ram32[i];
-    scp("basic.script", serv)
-    killall(serv);
-    brutessh(serv);
-    ftpcrack(serv);
-    nuke(serv);
-    exec("basic.script", serv, 12);
+    ns.scp("basic.script", serv)
+    ns.killall(serv);
+    ns.brutessh(serv);
+    ns.ftpcrack(serv);
+    ns.nuke(serv);
+    ns.exec("basic.script", serv, 12);
 }
 
 for (var i = 0; i < port2Ram64.length; ++i) {
